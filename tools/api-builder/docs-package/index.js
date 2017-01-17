@@ -16,9 +16,17 @@ module.exports = new Package('angular-v2-docs', [jsdocPackage, nunjucksPackage, 
 .processor(require('./processors/createOverviewDump'))
 .processor(require('./processors/checkUnbalancedBackTicks'))
 .processor(require('./processors/convertBackticksToCodeBlocks'))
+<<<<<<< HEAD:tools/api-builder/docs-package/index.js
 .processor(require('./processors/addNotYetDocumentedProperty'))
 .processor(require('./processors/mergeDecoratorDocsEmpty'))
 .processor(require('./processors/extractDecoratedClasses'))
+=======
+
+// Configure the log service
+.config(function(log) {
+  log.level = 'info';
+})
+>>>>>>> e7dd4b48fb129ba2cffbcc8b0cc3467ab8762e37:public/api-builder/docs-package/index.js
 
 .config(function(parseTagsProcessor) {
   parseTagsProcessor.tagDefinitions.push({ name: 'internal', transforms: function() { return true; } });
